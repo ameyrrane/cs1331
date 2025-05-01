@@ -14,11 +14,7 @@ public class Battleship {
 		char[][] player2 = inputShipCoordinate("PLAYER 2");
 		printBattleShip(player2);
 
-		String winner = startBattle(player1, player2);
-
-		System.out.println(winner + " WINS! YOU SUNK ALL OF YOUR OPPONENT'S SHIP");
-
-
+		startBattle(player1, player2);
 
 	}
 
@@ -30,7 +26,7 @@ public class Battleship {
 		final int MAX_ROW = 5;
 		final int MAX_COL = 5;
 
-		char[][] ship = getblankShip(MAX_ROW, MAX_COL);	
+		char[][] ship = getblankShip(MAX_ROW, MAX_COL);
 		Scanner input = new Scanner(System.in);
 
 		int entries = 5;
@@ -40,18 +36,16 @@ public class Battleship {
 		for (int i = 0; i < entries; i++) {
 
 			System.out.printf("Enter ship %d location:\n", (i + 1));
-			do{		
+			do {
 				row = input.nextInt();
 				col = input.nextInt();
 				if ((row < 0 || row > 4) || (col < 0 || col > 4)) {
 					System.out.println("Invalid coordinates. Choose different coordinates.");
-				} 
-				else if (ship[row][col] == '@') {
+				} else if (ship[row][col] == '@') {
 					System.out.println("You already have a ship there. Choose a different coordinate.");
 				}
-				
 
-			} while ((row < 0 || row > 4) || (col < 0 || col > 4) || ship[row][col] == '@'); 
+			} while ((row < 0 || row > 4) || (col < 0 || col > 4) || ship[row][col] == '@');
 			ship[row][col] = '@';
 
 		}
@@ -78,67 +72,83 @@ public class Battleship {
 		}
 		// for (int i = 0; i < 100; i++) {
 
-		// 	System.out.println();
+		// System.out.println();
 
 		// }
 	}
 
-	private static String startBattle(char[][] player1, char[][] player2){
+	// method for battle between two players.
+	private static void startBattle(char[][] player1, char[][] player2) {
 
+		// sunk count is used to track how many ships were destroyed by opposite player.
 		int sunkCount1 = 0;
 		int sunkCount2 = 0;
 		final int MAX_ROW = 5;
 		final int MAX_COL = 5;
 
-		char[][] target1 = getblankShip(MAX_ROW, MAX_COL);		
-		char[][] target2 = getblankShip(MAX_ROW, MAX_COL);	
+		// Initialize two target array with default value of '-'.
+		char[][] hitsOnPlayer1 = getblankShip(MAX_ROW, MAX_COL);
+		char[][] hitsOnPlayer2 = getblankShip(MAX_ROW, MAX_COL);
 
 		final int winCount = 5;
 
 		while (true) {
 
-			int[] firedTarget1 = giveValidTarget("Player 1", target2);
+			// Get valid target from the user and check whehter attack was successful or
+			// not.
+			int[] targetByP1 = giveValidTarget("Player 1", hitsOnPlayer2);
 
-			if (player2[firedTarget1[0]][firedTarget1[1]] == '@') {
+			if (player2[targetByP1[0]][targetByP1[1]] == '@') {
 				System.out.println("PLAYER 1 HIT PLAYER 2's SHIP!");
-				target2[firedTarget1[0]][firedTarget1[1]] = 'X';
+				hitsOnPlayer2[targetByP1[0]][targetByP1[1]] = 'X';
+				player2[targetByP1[0]][targetByP1[1]] = 'X';
 				sunkCount1++;
-				printBattleShip(target2);
+				printBattleShip(hitsOnPlayer2);
 				if (sunkCount1 == winCount)
 					break;
-			} 
-			else {
+			} else {
 				System.out.println("PLAYER 1 MISSED!");
-				target2[firedTarget1[0]][firedTarget1[1]] = '0';
-				printBattleShip(target2);
+				hitsOnPlayer2[targetByP1[0]][targetByP1[1]] = '0';
+				player2[targetByP1[0]][targetByP1[1]] = '0';
+				printBattleShip(hitsOnPlayer2);
 			}
-			
-			int[] firedTarget2 = giveValidTarget("Player 2", target1);
 
-			if (player1[firedTarget2[0]][firedTarget2[1]] == '@') {
+			int[] firedhitsOnPlayer2 = giveValidTarget("Player 2", hitsOnPlayer1);
+
+			if (player1[firedhitsOnPlayer2[0]][firedhitsOnPlayer2[1]] == '@') {
 				System.out.println("PLAYER 2 HIT PLAYER 1's SHIP!");
-				target1[firedTarget2[0]][firedTarget2[1]] = 'X';
+				hitsOnPlayer1[firedhitsOnPlayer2[0]][firedhitsOnPlayer2[1]] = 'X';
+				player1[targetByP1[0]][targetByP1[1]] = 'X';
 				sunkCount2++;
-				printBattleShip(target1);
+				printBattleShip(hitsOnPlayer1);
 				if (sunkCount2 == winCount)
 					break;
-			} 
-			else {
+			} else {
 				System.out.println("PLAYER 2 MISSED!");
-				target1[firedTarget2[0]][firedTarget2[1]] = '0';
-				printBattleShip(target1);
+				hitsOnPlayer1[firedhitsOnPlayer2[0]][firedhitsOnPlayer2[1]] = '0';
+				player1[targetByP1[0]][targetByP1[1]] = '0';
+				printBattleShip(hitsOnPlayer1);
 			}
-			
-		} 
-		
-		if (sunkCount1 == winCount) 
-			return "PLAYER 1";
-		else
-			return "PLAYER 2";
+
+		}
+
+		if (sunkCount1 == winCount) {
+			System.out.println("PLAYER 1 WINS! YOU SUNK ALL OF YOUR OPPONENT'S SHIP");
+		} else {
+			System.out.println("PLAYER 1 WINS! YOU SUNK ALL OF YOUR OPPONENT'S SHIP");
+		}
+
+		// Print final boards with space for readability.
+		System.out.println();
+		System.out.println("Final boards:");
+		System.out.println();
+		printBattleShip(player1);
+		System.out.println();
+		printBattleShip(player2);
 
 	}
 
-	private static char[][] getblankShip(int x, int y){
+	private static char[][] getblankShip(int x, int y) {
 
 		char[][] ship = new char[x][y];
 		for (int i = 0; i < ship.length; i++) {
@@ -163,15 +173,14 @@ public class Battleship {
 
 			if (row < 0 || row > 4 || col < 0 || col > 4) {
 				System.out.println("Invalid coordinates. Choose different coordinates.");
-			}
-			else if (target[row][col] == '0' || target[row][col] == 'X') {
+			} else if (target[row][col] == '0' || target[row][col] == 'X') {
 				System.out.println("You already fired on this spot. Choose different coordinates.");
-			}	
-			
+			}
+
 		} while (row < 0 || row > 4 || col < 0 || col > 4 || target[row][col] == '0' || target[row][col] == 'X');
 
-		int[] arrayTarget = {row,col};
+		int[] targetArray = { row, col };
 
-		return arrayTarget;
+		return targetArray;
 	}
 }
