@@ -10,9 +10,19 @@ public class Battleship {
 
 		char[][] player1 = inputShipCoordinate("PLAYER 1");
 		printBattleShip(player1);
+		for (int i = 0; i < 100; i++) {
+
+		System.out.println();
+
+		}
 
 		char[][] player2 = inputShipCoordinate("PLAYER 2");
 		printBattleShip(player2);
+		for (int i = 0; i < 100; i++) {
+
+		System.out.println();
+
+		}
 
 		startBattle(player1, player2);
 
@@ -70,11 +80,7 @@ public class Battleship {
 			}
 			System.out.println("");
 		}
-		// for (int i = 0; i < 100; i++) {
-
-		// System.out.println();
-
-		// }
+		
 	}
 
 	// method for battle between two players.
