@@ -3,33 +3,35 @@ public class Frog {
         private String name;
         private int age;
         private double tongueSpeed;
-        boolean isFroglet;
+        private boolean isFroglet;
         private static String SPECIES = "Rare Pepe"; 
 
-        private final int DEF_AGE = 5;
-        private final int DEF_TONGUE_SPEED = 5;
+        private static final int DEF_AGE = 5;
+        private static final int DEF_TONGUE_SPEED = 5;
     
         //constructors
+        public Frog(String name, double ageInYear, double tongueSpeed) {
+    
+            this(name, (int) (ageInYear * 12), tongueSpeed);
+            
+        }
+        
         public Frog(String name, int age, double tongueSpeed) {
     
             this.name = name;
             this.age = age;
             this.tongueSpeed = tongueSpeed;
+            this.isFroglet = (this.age <= 12);
+            
         }
-    
-        public Frog(String name, double ageInYear, double tongueSpeed) {
-    
-            this.name = name;
-            this.age = (int) ageInYear * 12;
-            this.tongueSpeed = tongueSpeed;
-        }
+
     
         public Frog(String name) {
+
+            this(name, DEF_AGE, DEF_TONGUE_SPEED);
     
-            this.name = name;
-            this.age = DEF_AGE;
-            this.tongueSpeed = DEF_TONGUE_SPEED;
         }
+
         //methods
     
         //setters and getters
@@ -41,37 +43,56 @@ public class Frog {
         public static void setSpecies(String newSpecies) {
             SPECIES = newSpecies;
         }
-    
+
         public String toString() {
-    
-            if (this.name == 0) {
-                return String.format("I'm dead, but I used to be a fly with a speed of %.2f\n", this.speed);
-            }
-            else {
-                return String.format("I'm a speedy fly wiht %.2f speed and %.2f name\n", this.speed, this.name);
-            }
+
+            if (isFroglet) 
+                return String.format("My name is %s and I'm a rare froglet! I'm %d months old and my tongue has a speed of %.2f", this.name, this.age, this.tongueSpeed);
+            
+            else 
+                return String.format("My name is %s and I'm a rare frog. I'm %d months old and my tongue has a speed of %.2f.", this.name, this.age, this.tongueSpeed);
+            
         }
+    
     
         public void grow(int addMonths) {
     
-            
-            
-            
-    
-            this.name = newname;
+            this.tongueSpeed = calculateTongueSpeed(this.age, addMonths, this.tongueSpeed);
+            this.age += addMonths;
+            isFroglet = (this.age <= 12);
         }
 
-        private static void calculateTongueSpeed(int addMonths) {
 
-            int newAge = this.age + addMonths;
+        private static double calculateTongueSpeed(int age, int addMonths, double speed) {
+
+            int newAge = age + addMonths;
             
             if (newAge <= 12) 
-                this.tongueSpeed += addMonths;
+                return speed + addMonths;
+
+            else if ((newAge > 12) && (newAge < 30) && (age < 12))
+                return speed + (12 - age);
             
             else if (newAge >= 30)
-                this.tongueSpeed -= addname * 0.5;
-            else 
-                this.speed += (20 - this.name) - (newname - 20) * 0.5;
+                speed -=  (newAge - 30) * 0.5;
+                
+                return (speed > 5) ? speed: 5;
+        }
+
+
+        public void eat(Fly eatFly) {
+
+            if (!eatFly.isDead()){
+                
+                if (this.tongueSpeed > eatFly.getSpeed()) {
+                    eatFly.setMass(0);
+                    if (eatFly.getMass() > 0.5 * this.age)
+                        grow(1);
+                }
+                else
+                    eatFly.setSpeed(eatFly.getSpeed() + 1);
+                
+            }
         }
     
     

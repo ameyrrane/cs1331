@@ -52,12 +52,12 @@ public class Fly {
 
     public String toString() {
 
-        if (isDead()) {
-            return String.format("I'm dead, but I used to be a fly with a speed of %.2f\n", this.speed);
-        }
-        else {
-            return String.format("I'm a speedy fly wiht %.2f speed and %.2f mass\n", this.speed, this.mass);
-        }
+        if (isDead()) 
+            return String.format("I'm dead, but I used to be a fly with a speed of %.2f", this.speed);
+        
+        else 
+            return String.format("I'm a speedy fly with %.2f speed and %.2f mass", this.speed, this.mass);
+        
     }
 
     public void grow(double addMass) {
