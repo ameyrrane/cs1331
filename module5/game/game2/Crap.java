@@ -4,25 +4,25 @@ public class Crap {
     private int point;
 
     public Crap() {
-
         die1 = new Die();
         die2 = new Die();
 
     }
 
-    private int toss() {
-
+    public int doubleRoll() {
         int total = die1.roll() + die2.roll();
         System.out.println("Die one: " + die1.getFaceValue());
         System.out.println("Die two: " + die2.getFaceValue());
 
         return total;
+
     }
 
     public void go() {
+        point = doubleRoll();
 
-        point = toss();
         System.out.println("Point: " + point);
+
         if ((point == 7) || (point == 11)) {
             System.out.println("Winner!");
         }
@@ -35,11 +35,12 @@ public class Crap {
         }
     }
 
-    private void stage2() {
+    public void stage2() {
 
         boolean endGame = false;
+
         while (!endGame) {
-        int total = toss();
+        int total = doubleRoll();
         System.out.println("Total: " + total);
             if (total == point) {
                 System.out.println("Winner!");
@@ -49,19 +50,14 @@ public class Crap {
                 System.out.println("You Lost!");
                 endGame = true;
             }
-        
-        }
+        } 
     }
 
-    public static void main (String[] args) {
-
+    public static void main(String[] args) {
         
-        Crap game = new Crap();
+        Crap crap1 = new Crap();
 
-        game.go();
-        
-        
-
+        crap1.go();
     }
 
 }

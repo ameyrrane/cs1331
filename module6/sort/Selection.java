@@ -1,3 +1,4 @@
+import java.util.Random;
 import java.util.Scanner;
 
 public class Selection {
@@ -6,6 +7,8 @@ public class Selection {
         
         System.out.print("How many items need to be sorted: ");
         Scanner input = new Scanner(System.in);
+
+        Random rand = new Random();
         
         int arrayLength = input.nextInt();
 
@@ -15,9 +18,17 @@ public class Selection {
 
         for (int i = 0; i < arrayLength; i++) {
 
-            numbers[i] = input.nextInt();
+            numbers[i] = rand.nextInt(100);
             
         }
+
+        System.out.println("Unsorted numbers are as follows:");
+
+        for (int number : numbers) {
+            
+            System.out.print(number + " ");
+        }
+        System.out.println();
 
         int temp;
 
@@ -38,9 +49,12 @@ public class Selection {
             start++;
         }
 
+        System.out.println("Sorted numbers are as follows:");
+
         for (int number : numbers) {
             
-            System.out.println(number);
+            System.out.print(number + " ");
         }
+        System.out.println();
     }
 }
