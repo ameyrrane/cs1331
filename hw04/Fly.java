@@ -8,44 +8,32 @@ public class Fly {
 
     //constructors
     public Fly(double mass, double speed) {
-
         this.mass = mass;
         this.speed = speed;
     }
 
     public Fly(double mass) {
-
-        this.mass = mass;
-        this.speed = DEFAULT_FLY_SPEED;
+        this(mass, DEFAULT_FLY_SPEED);
     }
 
     public Fly() {
-
-        this.mass = DEFAULT_FLY_MASS;
-        this.speed = DEFAULT_FLY_SPEED;
+        this(DEFAULT_FLY_MASS, DEFAULT_FLY_SPEED);
     }
 
     //methods
-
-    //setters and getters
-
     public double getMass () {
-
         return this.mass;
     }
     
     public void setMass (double mass) {
-
         this.mass = mass;
     }
 
     public double getSpeed () {
-
         return this.speed;
     }
     
     public void setSpeed (double speed) {
-
         this.speed = speed;
     }
 
@@ -53,26 +41,22 @@ public class Fly {
     public String toString() {
 
         if (isDead()) 
-            return String.format("I'm dead, but I used to be a fly with a speed of %.2f", this.speed);
+            return String.format("I'm dead, but I used to be a fly with a speed of %.2f.", this.speed);
         
         else 
-            return String.format("I'm a speedy fly with %.2f speed and %.2f mass", this.speed, this.mass);
+            return String.format("I'm a speedy fly with %.2f speed and %.2f mass.", this.speed, this.mass);
         
     }
 
-    public void grow(double addMass) {
-
-        double newMass = this.mass + addMass;
-        
-        if (newMass <= 20) 
-            this.speed += addMass;
-        
-        else if (this.mass >= 20)
-            this.speed -= addMass * 0.5;
-        else 
-            this.speed += (20 - this.mass) - (newMass - 20) * 0.5;
-
-        this.mass = newMass;
+    public void grow(int addedMass) {
+        for (int index = 0; index < addedMass; index++) {
+            this.mass++;
+            if (this.mass <= 20) {
+                this.speed++;
+            } else {
+                this.speed -= 0.5;
+            }
+        }
     }
 
     public boolean isDead() {

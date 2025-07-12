@@ -29,7 +29,7 @@ public class Wolf extends Canine implements Groomable, Comparable<Wolf> {
     }
 
     public String toString() {
-        return ("Size " + size);
+        return ("Size " + size + " Rank: " + rank);
     }
 
     public static void main(String[] args) {

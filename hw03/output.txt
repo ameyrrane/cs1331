@@ -1,0 +1,143 @@
+Visualized Actual Input/Output
+=====
+Welcome to Battleship!
+
+PLAYER 1, ENTER YOUR SHIP'S COORDINATES.
+Enter ship 1 location:
+[0 0]
+Enter ship 2 location:
+[0 1]
+Enter ship 3 location:
+[0 2]
+Enter ship 4 location:
+[0 3]
+Enter ship 5 location:
+[0 4]
+  0 1 2 3 4 
+0 @ @ @ @ @ 
+1 - - - - - 
+2 - - - - - 
+3 - - - - - 
+4 - - - - - 
+{ 100 empty lines }
+PLAYER 2, ENTER YOUR SHIP'S COORDINATES.
+Enter ship 1 location:
+[0 0]
+Enter ship 2 location:
+[1 0]
+Enter ship 3 location:
+[2 0]
+Enter ship 4 location:
+[3 0]
+Enter ship 5 location:
+[4 0]
+  0 1 2 3 4 
+0 @ - - - - 
+1 @ - - - - 
+2 @ - - - - 
+3 @ - - - - 
+4 @ - - - - 
+{ 100 empty lines }
+Player 1, enter hit row/column:
+[0 0]
+PLAYER 1 HIT PLAYER 2's SHIP!
+  0 1 2 3 4 
+0 X - - - - 
+1 - - - - - 
+2 - - - - - 
+3 - - - - - 
+4 - - - - - 
+
+Player 2, enter hit row/column
+[4 4]
+PLAYER 2 MISSED!
+  0 1 2 3 4 
+0 - - - - - 
+1 - - - - - 
+2 - - - - - 
+3 - - - - - 
+4 - - - - 0 
+
+Player 1, enter hit row/column
+[1 0]
+PLAYER 1 HIT PLAYER 2's SHIP!
+  0 1 2 3 4 
+0 X - - - - 
+1 X - - - - 
+2 - - - - - 
+3 - - - - - 
+4 - - - - - 
+
+Player 2, enter hit row/column
+[3 4]
+PLAYER 2 MISSED!
+  0 1 2 3 4 
+0 - - - - - 
+1 - - - - - 
+2 - - - - - 
+3 - - - - 0 
+4 - - - - 0 
+
+Player 1, enter hit row/column
+[2 0]
+PLAYER 1 HIT PLAYER 2's SHIP!
+  0 1 2 3 4 
+0 X - - - - 
+1 X - - - - 
+2 X - - - - 
+3 - - - - - 
+4 - - - - - 
+Player 2, enter hit row/column
+[2 4]
+PLAYER 2 MISSED!
+  0 1 2 3 4 
+0 - - - - - 
+1 - - - - - 
+2 - - - - 0 
+3 - - - - 0 
+4 - - - - 0 
+Player 1, enter hit row/column
+[3 0]
+PLAYER 1 HIT PLAYER 2's SHIP!
+  0 1 2 3 4 
+0 X - - - - 
+1 X - - - - 
+2 X - - - - 
+3 X - - - - 
+4 - - - - - 
+Player 2, enter hit row/column
+[1 4]
+PLAYER 2 MISSED!
+  0 1 2 3 4 
+0 - - - - - 
+1 - - - - 0 
+2 - - - - 0 
+3 - - - - 0 
+4 - - - - 0 
+Player 1, enter hit row/column
+[4 0]
+PLAYER 1 HIT PLAYER 2's SHIP!
+  0 1 2 3 4 
+0 X - - - - 
+1 X - - - - 
+2 X - - - - 
+3 X - - - - 
+4 X - - - - 
+PLAYER 1 WINS! YOU SUNK ALL OF YOUR OPPONENT'S SHIP
+
+Final boards:
+
+  0 1 2 3 4 
+0 0 @ @ @ @ 
+1 0 - - - - 
+2 0 - - - - 
+3 0 - - - - 
+4 - - - - - 
+
+  0 1 2 3 4 
+0 X - - - - 
+1 X - - - - 
+2 X - - - - 
+3 X - - - - 
+4 X - - - - 
+=====

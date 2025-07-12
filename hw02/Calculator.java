@@ -5,17 +5,17 @@ public class Calculator {
     public static void main(String[] args) {
         
         // Give user list of options for operations to choose from.
-        System.out.println("Choose form the following operations:");
-        System.out.println("add subtract multiply divide alphabetize");
+        System.out.println("List of operations: add subtract multiply divide alphabetize");
+        System.out.println("Enter an operation:");
 
         Scanner scanner = new Scanner(System.in);
-        String operation = scanner.nextLine().trim().toLowerCase();
+        String operation = scanner.nextLine().toLowerCase();
         String errorMessage = "Invalid input entered. Terminating...";
 
         
         switch (operation) {
             case "add":
-                System.out.print("Enter two integers: ");
+                System.out.println("Enter two integers:");
                 if (scanner.hasNextInt() == false) {
                     System.out.println(errorMessage);
                     break;
@@ -29,7 +29,7 @@ public class Calculator {
                 System.out.println("Answer: " + (num1 + num2));
                 break;
             case "subtract":
-                System.out.print("Enter two integers: ");
+                System.out.println("Enter two integers:");
                 if (scanner.hasNextInt() == false) {
                     System.out.println(errorMessage);
                     break;
@@ -46,7 +46,7 @@ public class Calculator {
 
                 
             case "multiply":
-                System.out.print("Enter two doubles: ");
+                System.out.println("Enter two doubles:");
                 if (scanner.hasNextDouble() == false) {
                     System.out.println(errorMessage);
                     break;
@@ -61,7 +61,7 @@ public class Calculator {
                 System.out.printf("Answer: %.2f\n", (num3 * num4));
                 break;
             case "divide":
-                System.out.print("Enter two doubles: ");
+                System.out.println("Enter two doubles:");
                 if (scanner.hasNextDouble() == false) {
                     System.out.println(errorMessage);
                     break;
@@ -80,24 +80,20 @@ public class Calculator {
                 System.out.printf("Answer: %.2f\n", (num3 / num4));
                 break;
             case "alphabetize":
-                System.out.print("Enter two words: ");
+                System.out.println("Enter two words:");
                 
-                String input1 = scanner.next().toLowerCase();
-                String input2 = scanner.next().toLowerCase();
+                String input1 = scanner.next();
+                String input2 = scanner.next();
 
-                if (input1.compareTo(input2) == 0 ) {
-                    System.out.println("Chicken or Egg");
+                if (input1.toLowerCase().compareTo(input2.toLowerCase()) == 0 ) {
+                    System.out.println("Answer: Chicken or Egg");
+                } else if (input1.toLowerCase().compareTo(input2.toLowerCase()) < 0) {
+                    System.out.println("Answer: " + input1 + " comes before " + input2 + " alphabetically.");
+                    
+                } else {
+                    System.out.println("Answer: " + input2 + " comes before " + input1 + " alphabetically.");
                 }
-                else {
-                    if (input1.compareTo(input2) > 0) {
-                        System.out.println(input1 + " comes before " + input2);
-                    }
-                    else {
-                        System.out.println(input2 + " comes before " + input1);
-                    }
                 break;
-
-                }
             default:
                 System.out.println(errorMessage);
         }

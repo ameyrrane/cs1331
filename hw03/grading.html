@@ -1,0 +1,827 @@
+
+[Executed at: Wed Jul 9 18:03:22 PDT 2025]
+
+<!DOCTYPE html><html><head><style>.alert{background-color:orange;padding:10px;color:#fff;opacity:.83;margin-bottom:15px}.total-score{margin:10px}.tests{max-width:100%}.test-result{border:1px solid gray;margin:10px;display:flex;flex-direction:column}.test-result-title{background-color:#d3d3d3;text-wrap:wrap}.test-result-passed{color:green}.test-result-failed{color:red}.test-output{overflow:auto;white-space:pre;margin:0;border:0}</style></head><body><div class="total-score"><h3>Total Score: 70.00 (sent to edX: 70)</h3></div><div class="tests"><div id="__edx_about_your_submission" class="test-result"><div class="test-result-title"><h3>About your Submission</h3></div><pre class="test-output">If you need help with your submission, you can post a question in the edX discussion forum.
+Please include your Submission Reference in your question: [vocID 4206188 submissionName 0(65f456e6c7314a92424f603932a3cb0b) submissionNum 5]</pre></div><div id="test-0" class="test-result"><div class="test-result-title test-result-passed"><h3>All Files Submitted: OK (0.0/0.0)</h3></div></div><div id="test-1" class="test-result"><div class="test-result-title test-result-passed"><h3>Compilation Check: OK (0.0/0.0)</h3></div></div><div id="test-2" class="test-result"><div class="test-result-title test-result-passed"><h3>Check: Battleship Compiles (2.0/2.0)</h3></div></div><div id="test-3" class="test-result"><div class="test-result-title test-result-passed"><h3>Check: Battleship Has main (2.0/2.0)</h3></div></div><div id="test-4" class="test-result"><div class="test-result-title test-result-passed"><h3>Check: Battleship Has printBattleShip as provided (2.0/2.0)</h3></div></div><div id="test-5" class="test-result"><div class="test-result-title test-result-passed"><h3>Check: Battleship Uses do-while Loop (2.0/2.0)</h3></div></div><div id="test-6" class="test-result"><div class="test-result-title test-result-passed"><h3>Check: Battleship Uses for Loop (2.0/2.0)</h3></div></div><div id="test-7" class="test-result"><div class="test-result-title test-result-passed"><h3>Scenario 1: Player 1 always hits, player 2 always misses, no invalid coordinates (15.0/15.0)</h3></div></div><div id="test-8" class="test-result"><div class="test-result-title test-result-passed"><h3>Scenario 2: Player 1 always misses, player 2 always hits, no invalid coordinates (15.0/15.0)</h3></div></div><div id="test-9" class="test-result"><div class="test-result-title test-result-passed"><h3>Scenario 3: Player 1 always hits, player 2 always misses, players use invalid coordinates after correct placements (15.0/15.0)</h3></div></div><div id="test-10" class="test-result"><div class="test-result-title test-result-passed"><h3>Scenario 4: Player 1 always misses, player 2 always hits, players use invalid coordinates during placements (15.0/15.0)</h3></div></div><div id="test-11" class="test-result"><div class="test-result-title test-result-failed"><h3>Scenario 5: Player 1 always hits, player 2 always misses, players use repeated coordinates during placements (0.0/15.0)</h3></div><pre class="test-output">For interaction: java Battleship 
+
+With the following input lines:
+
+====================
+0 0
+0 1
+0 2
+0 0
+0 3
+0 4
+0 0
+1 0
+0 0
+0 0
+2 0
+3 0
+1 0
+4 0
+0 0
+4 4
+0 0
+1 0
+3 4
+2 0
+4 4
+2 4
+3 0
+4 4
+1 4
+4 0
+====================
+
+########## Errors ##########
+
+The Input/Output didn't match with the expected. Review the Expected and Actual Input/Output.
+Note that user input is shown in brackets, but brackets aren't passed to your program / code
+
+Raw Expected Input/Output (as a Java String)
+&quot;Welcome to Battleship!\n\nPLAYER 1, ENTER YOUR SHIPS' COORDINATES.\nEnter ship 1 location:\n[0 0]\nEnter ship 2 location:\n[0 1]\nEnter ship 3 location:\n[0 2]\nEnter ship 4 location:\n[0 0]\nYou already have a ship there. Choose different coordinates.\nEnter ship 4 location:\n[0 3]\nEnter ship 5 location:\n[0 4]\n  0 1 2 3 4 \n0 @ @ @ @ @ \n1 - - - - - \n2 - - - - - \n3 - - - - - \n4 - - - - - \n{ 100 empty lines }\nPLAYER 2, ENTER YOUR SHIPS' COORDINATES.\nEnter ship 1 location:\n[0 0]\nEnter ship 2 location:\n[1 0]\nEnter ship 3 location:\n[0 0]\nYou already have a ship there. Choose different coordinates.\nEnter ship 3 location:\n[0 0]\nYou already have a ship there. Choose different coordinates.\nEnter ship 3 location:\n[2 0]\nEnter ship 4 location:\n[3 0]\nEnter ship 5 location:\n[1 0]\nYou already have a ship there. Choose different coordinates.\nEnter ship 5 location:\n[4 0]\n  0 1 2 3 4 \n0 @ - - - - \n1 @ - - - - \n2 @ - - - - \n3 @ - - - - \n4 @ - - - - \n{ 100 empty lines }\nPlayer 1, enter hit row/column:\n[0 0]\nPLAYER 1 HIT PLAYER 2's SHIP!\n  0 1 2 3 4 \n0 X - - - - \n1 - - - - - \n2 - - - - - \n3 - - - - - \n4 - - - - - \n\nPlayer 2, enter hit row/column:\n[4 4]\nPLAYER 2 MISSED!\n  0 1 2 3 4 \n0 - - - - - \n1 - - - - - \n2 - - - - - \n3 - - - - - \n4 - - - - O \n\nPlayer 1, enter hit row/column:\n[0 0]\nYou already fired on this spot. Choose different coordinates.\nPlayer 1, enter hit row/column:\n[1 0]\nPLAYER 1 HIT PLAYER 2's SHIP!\n  0 1 2 3 4 \n0 X - - - - \n1 X - - - - \n2 - - - - - \n3 - - - - - \n4 - - - - - \n\nPlayer 2, enter hit row/column:\n[3 4]\nPLAYER 2 MISSED!\n  0 1 2 3 4 \n0 - - - - - \n1 - - - - - \n2 - - - - - \n3 - - - - O \n4 - - - - O \n\nPlayer 1, enter hit row/column:\n[2 0]\nPLAYER 1 HIT PLAYER 2's SHIP!\n  0 1 2 3 4 \n0 X - - - - \n1 X - - - - \n2 X - - - - \n3 - - - - - \n4 - - - - - \n\nPlayer 2, enter hit row/column:\n[4 4]\nYou already fired on this spot. Choose different coordinates.\nPlayer 2, enter hit row/column:\n[2 4]\nPLAYER 2 MISSED!\n  0 1 2 3 4 \n0 - - - - - \n1 - - - - - \n2 - - - - O \n3 - - - - O \n4 - - - - O \n\nPlayer 1, enter hit row/column:\n[3 0]\nPLAYER 1 HIT PLAYER 2's SHIP!\n  0 1 2 3 4 \n0 X - - - - \n1 X - - - - \n2 X - - - - \n3 X - - - - \n4 - - - - - \n\nPlayer 2, enter hit row/column:\n[4 4]\nYou already fired on this spot. Choose different coordinates.\nPlayer 2, enter hit row/column:\n[1 4]\nPLAYER 2 MISSED!\n  0 1 2 3 4 \n0 - - - - - \n1 - - - - O \n2 - - - - O \n3 - - - - O \n4 - - - - O \n\nPlayer 1, enter hit row/column:\n[4 0]\nPLAYER 1 HIT PLAYER 2's SHIP!\n  0 1 2 3 4 \n0 X - - - - \n1 X - - - - \n2 X - - - - \n3 X - - - - \n4 X - - - - \nPLAYER 1 WINS! YOU SUNK ALL OF YOUR OPPONENT'S SHIPS!\n\nFinal boards:\n\n  0 1 2 3 4 \n0 @ @ @ @ @ \n1 - - - - O \n2 - - - - O \n3 - - - - O \n4 - - - - O \n\n  0 1 2 3 4 \n0 X - - - - \n1 X - - - - \n2 X - - - - \n3 X - - - - \n4 X - - - - \n&quot;
+
+Raw Actual Input/Output. First difference marked below with ^
+&quot;Welcome to Battleship!\n\nPLAYER 1, ENTER YOUR SHIPS' COORDINATES.\nEnter ship 1 location:\n[0 0]\nEnter ship 2 location:\n[0 1]\nEnter ship 3 location:\n[0 2]\nEnter ship 4 location:\n[0 0]\nYou already fired on this spot. Choose different coordinates.\nEnter ship 4 location:\n[0 3]\nEnter ship 5 location:\n[0 4]\n  0 1 2 3 4 \n0 @ @ @ @ @ \n1 - - - - - \n2 - - - - - \n3 - - - - - \n4 - - - - - \n{ 100 empty lines }\nPLAYER 2, ENTER YOUR SHIPS' COORDINATES.\nEnter ship 1 location:\n[0 0]\nEnter ship 2 location:\n[1 0]\nEnter ship 3 location:\n[0 0]\nYou already fired on this spot. Choose different coordinates.\nEnter ship 3 location:\n[0 0]\nYou already fired on this spot. Choose different coordinates.\nEnter ship 3 location:\n[2 0]\nEnter ship 4 location:\n[3 0]\nEnter ship 5 location:\n[1 0]\nYou already fired on this spot. Choose different coordinates.\nEnter ship 5 location:\n[4 0]\n  0 1 2 3 4 \n0 @ - - - - \n1 @ - - - - \n2 @ - - - - \n3 @ - - - - \n4 @ - - - - \n{ 100 empty lines }\nPlayer 1, enter hit row/column:\n[0 0]\nPLAYER 1 HIT PLAYER 2's SHIP!\n  0 1 2 3 4 \n0 X - - - - \n1 - - - - - \n2 - - - - - \n3 - - - - - \n4 - - - - - \n\nPlayer 2, enter hit row/column:\n[4 4]\nPLAYER 2 MISSED!\n  0 1 2 3 4 \n0 - - - - - \n1 - - - - - \n2 - - - - - \n3 - - - - - \n4 - - - - O \n\nPlayer 1, enter hit row/column:\n[0 0]\nYou already fired on this spot. Choose different coordinates.\nPlayer 1, enter hit row/column:\n[1 0]\nPLAYER 1 HIT PLAYER 2's SHIP!\n  0 1 2 3 4 \n0 X - - - - \n1 X - - - - \n2 - - - - - \n3 - - - - - \n4 - - - - - \n\nPlayer 2, enter hit row/column:\n[3 4]\nPLAYER 2 MISSED!\n  0 1 2 3 4 \n0 - - - - - \n1 - - - - - \n2 - - - - - \n3 - - - - O \n4 - - - - O \n\nPlayer 1, enter hit row/column:\n[2 0]\nPLAYER 1 HIT PLAYER 2's SHIP!\n  0 1 2 3 4 \n0 X - - - - \n1 X - - - - \n2 X - - - - \n3 - - - - - \n4 - - - - - \n\nPlayer 2, enter hit row/column:\n[4 4]\nYou already fired on this spot. Choose different coordinates.\nPlayer 2, enter hit row/column:\n[2 4]\nPLAYER 2 MISSED!\n  0 1 2 3 4 \n0 - - - - - \n1 - - - - - \n2 - - - - O \n3 - - - - O \n4 - - - - O \n\nPlayer 1, enter hit row/column:\n[3 0]\nPLAYER 1 HIT PLAYER 2's SHIP!\n  0 1 2 3 4 \n0 X - - - - \n1 X - - - - \n2 X - - - - \n3 X - - - - \n4 - - - - - \n\nPlayer 2, enter hit row/column:\n[4 4]\nYou already fired on this spot. Choose different coordinates.\nPlayer 2, enter hit row/column:\n[1 4]\nPLAYER 2 MISSED!\n  0 1 2 3 4 \n0 - - - - - \n1 - - - - O \n2 - - - - O \n3 - - - - O \n4 - - - - O \n\nPlayer 1, enter hit row/column:\n[4 0]\nPLAYER 1 HIT PLAYER 2's SHIP!\n  0 1 2 3 4 \n0 X - - - - \n1 X - - - - \n2 X - - - - \n3 X - - - - \n4 X - - - - \nPLAYER 1 WINS! YOU SUNK ALL OF YOUR OPPONENT'S SHIPS!\n\nFinal boards:\n\n  0 1 2 3 4 \n0 @ @ @ @ @ \n1 - - - - O \n2 - - - - O \n3 - - - - O \n4 - - - - O \n\n  0 1 2 3 4 \n0 X - - - - \n1 X - - - - \n2 X - - - - \n3 X - - - - \n4 X - - - - \n&quot;
+                                                                                                                                                                                                             ^
+
+Visualized Expected Input/Output
+=====
+Welcome to Battleship!
+
+PLAYER 1, ENTER YOUR SHIPS' COORDINATES.
+Enter ship 1 location:
+[0 0]
+Enter ship 2 location:
+[0 1]
+Enter ship 3 location:
+[0 2]
+Enter ship 4 location:
+[0 0]
+You already have a ship there. Choose different coordinates.
+Enter ship 4 location:
+[0 3]
+Enter ship 5 location:
+[0 4]
+  0 1 2 3 4 
+0 @ @ @ @ @ 
+1 - - - - - 
+2 - - - - - 
+3 - - - - - 
+4 - - - - - 
+{ 100 empty lines }
+PLAYER 2, ENTER YOUR SHIPS' COORDINATES.
+Enter ship 1 location:
+[0 0]
+Enter ship 2 location:
+[1 0]
+Enter ship 3 location:
+[0 0]
+You already have a ship there. Choose different coordinates.
+Enter ship 3 location:
+[0 0]
+You already have a ship there. Choose different coordinates.
+Enter ship 3 location:
+[2 0]
+Enter ship 4 location:
+[3 0]
+Enter ship 5 location:
+[1 0]
+You already have a ship there. Choose different coordinates.
+Enter ship 5 location:
+[4 0]
+  0 1 2 3 4 
+0 @ - - - - 
+1 @ - - - - 
+2 @ - - - - 
+3 @ - - - - 
+4 @ - - - - 
+{ 100 empty lines }
+Player 1, enter hit row/column:
+[0 0]
+PLAYER 1 HIT PLAYER 2's SHIP!
+  0 1 2 3 4 
+0 X - - - - 
+1 - - - - - 
+2 - - - - - 
+3 - - - - - 
+4 - - - - - 
+
+Player 2, enter hit row/column:
+[4 4]
+PLAYER 2 MISSED!
+  0 1 2 3 4 
+0 - - - - - 
+1 - - - - - 
+2 - - - - - 
+3 - - - - - 
+4 - - - - O 
+
+Player 1, enter hit row/column:
+[0 0]
+You already fired on this spot. Choose different coordinates.
+Player 1, enter hit row/column:
+[1 0]
+PLAYER 1 HIT PLAYER 2's SHIP!
+  0 1 2 3 4 
+0 X - - - - 
+1 X - - - - 
+2 - - - - - 
+3 - - - - - 
+4 - - - - - 
+
+Player 2, enter hit row/column:
+[3 4]
+PLAYER 2 MISSED!
+  0 1 2 3 4 
+0 - - - - - 
+1 - - - - - 
+2 - - - - - 
+3 - - - - O 
+4 - - - - O 
+
+Player 1, enter hit row/column:
+[2 0]
+PLAYER 1 HIT PLAYER 2's SHIP!
+  0 1 2 3 4 
+0 X - - - - 
+1 X - - - - 
+2 X - - - - 
+3 - - - - - 
+4 - - - - - 
+
+Player 2, enter hit row/column:
+[4 4]
+You already fired on this spot. Choose different coordinates.
+Player 2, enter hit row/column:
+[2 4]
+PLAYER 2 MISSED!
+  0 1 2 3 4 
+0 - - - - - 
+1 - - - - - 
+2 - - - - O 
+3 - - - - O 
+4 - - - - O 
+
+Player 1, enter hit row/column:
+[3 0]
+PLAYER 1 HIT PLAYER 2's SHIP!
+  0 1 2 3 4 
+0 X - - - - 
+1 X - - - - 
+2 X - - - - 
+3 X - - - - 
+4 - - - - - 
+
+Player 2, enter hit row/column:
+[4 4]
+You already fired on this spot. Choose different coordinates.
+Player 2, enter hit row/column:
+[1 4]
+PLAYER 2 MISSED!
+  0 1 2 3 4 
+0 - - - - - 
+1 - - - - O 
+2 - - - - O 
+3 - - - - O 
+4 - - - - O 
+
+Player 1, enter hit row/column:
+[4 0]
+PLAYER 1 HIT PLAYER 2's SHIP!
+  0 1 2 3 4 
+0 X - - - - 
+1 X - - - - 
+2 X - - - - 
+3 X - - - - 
+4 X - - - - 
+PLAYER 1 WINS! YOU SUNK ALL OF YOUR OPPONENT'S SHIPS!
+
+Final boards:
+
+  0 1 2 3 4 
+0 @ @ @ @ @ 
+1 - - - - O 
+2 - - - - O 
+3 - - - - O 
+4 - - - - O 
+
+  0 1 2 3 4 
+0 X - - - - 
+1 X - - - - 
+2 X - - - - 
+3 X - - - - 
+4 X - - - - 
+=====
+
+Visualized Actual Input/Output
+=====
+Welcome to Battleship!
+
+PLAYER 1, ENTER YOUR SHIPS' COORDINATES.
+Enter ship 1 location:
+[0 0]
+Enter ship 2 location:
+[0 1]
+Enter ship 3 location:
+[0 2]
+Enter ship 4 location:
+[0 0]
+You already fired on this spot. Choose different coordinates.
+Enter ship 4 location:
+[0 3]
+Enter ship 5 location:
+[0 4]
+  0 1 2 3 4 
+0 @ @ @ @ @ 
+1 - - - - - 
+2 - - - - - 
+3 - - - - - 
+4 - - - - - 
+{ 100 empty lines }
+PLAYER 2, ENTER YOUR SHIPS' COORDINATES.
+Enter ship 1 location:
+[0 0]
+Enter ship 2 location:
+[1 0]
+Enter ship 3 location:
+[0 0]
+You already fired on this spot. Choose different coordinates.
+Enter ship 3 location:
+[0 0]
+You already fired on this spot. Choose different coordinates.
+Enter ship 3 location:
+[2 0]
+Enter ship 4 location:
+[3 0]
+Enter ship 5 location:
+[1 0]
+You already fired on this spot. Choose different coordinates.
+Enter ship 5 location:
+[4 0]
+  0 1 2 3 4 
+0 @ - - - - 
+1 @ - - - - 
+2 @ - - - - 
+3 @ - - - - 
+4 @ - - - - 
+{ 100 empty lines }
+Player 1, enter hit row/column:
+[0 0]
+PLAYER 1 HIT PLAYER 2's SHIP!
+  0 1 2 3 4 
+0 X - - - - 
+1 - - - - - 
+2 - - - - - 
+3 - - - - - 
+4 - - - - - 
+
+Player 2, enter hit row/column:
+[4 4]
+PLAYER 2 MISSED!
+  0 1 2 3 4 
+0 - - - - - 
+1 - - - - - 
+2 - - - - - 
+3 - - - - - 
+4 - - - - O 
+
+Player 1, enter hit row/column:
+[0 0]
+You already fired on this spot. Choose different coordinates.
+Player 1, enter hit row/column:
+[1 0]
+PLAYER 1 HIT PLAYER 2's SHIP!
+  0 1 2 3 4 
+0 X - - - - 
+1 X - - - - 
+2 - - - - - 
+3 - - - - - 
+4 - - - - - 
+
+Player 2, enter hit row/column:
+[3 4]
+PLAYER 2 MISSED!
+  0 1 2 3 4 
+0 - - - - - 
+1 - - - - - 
+2 - - - - - 
+3 - - - - O 
+4 - - - - O 
+
+Player 1, enter hit row/column:
+[2 0]
+PLAYER 1 HIT PLAYER 2's SHIP!
+  0 1 2 3 4 
+0 X - - - - 
+1 X - - - - 
+2 X - - - - 
+3 - - - - - 
+4 - - - - - 
+
+Player 2, enter hit row/column:
+[4 4]
+You already fired on this spot. Choose different coordinates.
+Player 2, enter hit row/column:
+[2 4]
+PLAYER 2 MISSED!
+  0 1 2 3 4 
+0 - - - - - 
+1 - - - - - 
+2 - - - - O 
+3 - - - - O 
+4 - - - - O 
+
+Player 1, enter hit row/column:
+[3 0]
+PLAYER 1 HIT PLAYER 2's SHIP!
+  0 1 2 3 4 
+0 X - - - - 
+1 X - - - - 
+2 X - - - - 
+3 X - - - - 
+4 - - - - - 
+
+Player 2, enter hit row/column:
+[4 4]
+You already fired on this spot. Choose different coordinates.
+Player 2, enter hit row/column:
+[1 4]
+PLAYER 2 MISSED!
+  0 1 2 3 4 
+0 - - - - - 
+1 - - - - O 
+2 - - - - O 
+3 - - - - O 
+4 - - - - O 
+
+Player 1, enter hit row/column:
+[4 0]
+PLAYER 1 HIT PLAYER 2's SHIP!
+  0 1 2 3 4 
+0 X - - - - 
+1 X - - - - 
+2 X - - - - 
+3 X - - - - 
+4 X - - - - 
+PLAYER 1 WINS! YOU SUNK ALL OF YOUR OPPONENT'S SHIPS!
+
+Final boards:
+
+  0 1 2 3 4 
+0 @ @ @ @ @ 
+1 - - - - O 
+2 - - - - O 
+3 - - - - O 
+4 - - - - O 
+
+  0 1 2 3 4 
+0 X - - - - 
+1 X - - - - 
+2 X - - - - 
+3 X - - - - 
+4 X - - - - 
+=====
+
+</pre></div><div id="test-12" class="test-result"><div class="test-result-title test-result-failed"><h3>Scenario 6: Feature Integration (both players hit, miss, and make all the different kind of input mistakes) (0.0/15.0)</h3></div><pre class="test-output">For interaction: java Battleship 
+
+With the following input lines:
+
+====================
+0 0
+1 3
+-1 2
+4 4
+0 0
+2 2
+0 3
+1 1
+50 1
+0 4
+2 4
+0 2
+0 4
+3 4
+2 2
+1 1
+0 4
+4 3
+2 2
+0 2
+-1 3
+0 0
+3 4
+0 3
+5 5
+1 1
+1 1
+1 1
+1 3
+2 4
+====================
+
+########## Errors ##########
+
+The Input/Output didn't match with the expected. Review the Expected and Actual Input/Output.
+Note that user input is shown in brackets, but brackets aren't passed to your program / code
+
+Raw Expected Input/Output (as a Java String)
+&quot;Welcome to Battleship!\n\nPLAYER 1, ENTER YOUR SHIPS' COORDINATES.\nEnter ship 1 location:\n[0 0]\nEnter ship 2 location:\n[1 3]\nEnter ship 3 location:\n[-1 2]\nInvalid coordinates. Choose different coordinates.\nEnter ship 3 location:\n[4 4]\nEnter ship 4 location:\n[0 0]\nYou already have a ship there. Choose different coordinates.\nEnter ship 4 location:\n[2 2]\nEnter ship 5 location:\n[0 3]\n  0 1 2 3 4 \n0 @ - - @ - \n1 - - - @ - \n2 - - @ - - \n3 - - - - - \n4 - - - - @ \n{ 100 empty lines }\nPLAYER 2, ENTER YOUR SHIPS' COORDINATES.\nEnter ship 1 location:\n[1 1]\nEnter ship 2 location:\n[50 1]\nInvalid coordinates. Choose different coordinates.\nEnter ship 2 location:\n[0 4]\nEnter ship 3 location:\n[2 4]\nEnter ship 4 location:\n[0 2]\nEnter ship 5 location:\n[0 4]\nYou already have a ship there. Choose different coordinates.\nEnter ship 5 location:\n[3 4]\n  0 1 2 3 4 \n0 - - @ - @ \n1 - @ - - - \n2 - - - - @ \n3 - - - - @ \n4 - - - - - \n{ 100 empty lines }\nPlayer 1, enter hit row/column:\n[2 2]\nPLAYER 1 MISSED!\n  0 1 2 3 4 \n0 - - - - - \n1 - - - - - \n2 - - O - - \n3 - - - - - \n4 - - - - - \n\nPlayer 2, enter hit row/column:\n[1 1]\nPLAYER 2 MISSED!\n  0 1 2 3 4 \n0 - - - - - \n1 - O - - - \n2 - - - - - \n3 - - - - - \n4 - - - - - \n\nPlayer 1, enter hit row/column:\n[0 4]\nPLAYER 1 HIT PLAYER 2's SHIP!\n  0 1 2 3 4 \n0 - - - - X \n1 - - - - - \n2 - - O - - \n3 - - - - - \n4 - - - - - \n\nPlayer 2, enter hit row/column:\n[4 3]\nPLAYER 2 MISSED!\n  0 1 2 3 4 \n0 - - - - - \n1 - O - - - \n2 - - - - - \n3 - - - - - \n4 - - - O - \n\nPlayer 1, enter hit row/column:\n[2 2]\nYou already fired on this spot. Choose different coordinates.\nPlayer 1, enter hit row/column:\n[0 2]\nPLAYER 1 HIT PLAYER 2's SHIP!\n  0 1 2 3 4 \n0 - - X - X \n1 - - - - - \n2 - - O - - \n3 - - - - - \n4 - - - - - \n\nPlayer 2, enter hit row/column:\n[-1 3]\nInvalid coordinates. Choose different coordinates.\nPlayer 2, enter hit row/column:\n[0 0]\nPLAYER 2 HIT PLAYER 1's SHIP!\n  0 1 2 3 4 \n0 X - - - - \n1 - O - - - \n2 - - - - - \n3 - - - - - \n4 - - - O - \n\nPlayer 1, enter hit row/column:\n[3 4]\nPLAYER 1 HIT PLAYER 2's SHIP!\n  0 1 2 3 4 \n0 - - X - X \n1 - - - - - \n2 - - O - - \n3 - - - - X \n4 - - - - - \n\nPlayer 2, enter hit row/column:\n[0 3]\nPLAYER 2 HIT PLAYER 1's SHIP!\n  0 1 2 3 4 \n0 X - - X - \n1 - O - - - \n2 - - - - - \n3 - - - - - \n4 - - - O - \n\nPlayer 1, enter hit row/column:\n[5 5]\nInvalid coordinates. Choose different coordinates.\nPlayer 1, enter hit row/column:\n[1 1]\nPLAYER 1 HIT PLAYER 2's SHIP!\n  0 1 2 3 4 \n0 - - X - X \n1 - X - - - \n2 - - O - - \n3 - - - - X \n4 - - - - - \n\nPlayer 2, enter hit row/column:\n[1 1]\nYou already fired on this spot. Choose different coordinates.\nPlayer 2, enter hit row/column:\n[1 1]\nYou already fired on this spot. Choose different coordinates.\nPlayer 2, enter hit row/column:\n[1 3]\nPLAYER 2 HIT PLAYER 1's SHIP!\n  0 1 2 3 4 \n0 X - - X - \n1 - O - X - \n2 - - - - - \n3 - - - - - \n4 - - - O - \n\nPlayer 1, enter hit row/column:\n[2 4]\nPLAYER 1 HIT PLAYER 2's SHIP!\n  0 1 2 3 4 \n0 - - X - X \n1 - X - - - \n2 - - O - X \n3 - - - - X \n4 - - - - - \nPLAYER 1 WINS! YOU SUNK ALL OF YOUR OPPONENT'S SHIPS!\n\nFinal boards:\n\n  0 1 2 3 4 \n0 X - - X - \n1 - O - X - \n2 - - @ - - \n3 - - - - - \n4 - - - O @ \n\n  0 1 2 3 4 \n0 - - X - X \n1 - X - - - \n2 - - O - X \n3 - - - - X \n4 - - - - - \n&quot;
+
+Raw Actual Input/Output. First difference marked below with ^
+&quot;Welcome to Battleship!\n\nPLAYER 1, ENTER YOUR SHIPS' COORDINATES.\nEnter ship 1 location:\n[0 0]\nEnter ship 2 location:\n[1 3]\nEnter ship 3 location:\n[-1 2]\nInvalid coordinates. Choose different coordinates.\nEnter ship 3 location:\n[4 4]\nEnter ship 4 location:\n[0 0]\nYou already fired on this spot. Choose different coordinates.\nEnter ship 4 location:\n[2 2]\nEnter ship 5 location:\n[0 3]\n  0 1 2 3 4 \n0 @ - - @ - \n1 - - - @ - \n2 - - @ - - \n3 - - - - - \n4 - - - - @ \n{ 100 empty lines }\nPLAYER 2, ENTER YOUR SHIPS' COORDINATES.\nEnter ship 1 location:\n[1 1]\nEnter ship 2 location:\n[50 1]\nInvalid coordinates. Choose different coordinates.\nEnter ship 2 location:\n[0 4]\nEnter ship 3 location:\n[2 4]\nEnter ship 4 location:\n[0 2]\nEnter ship 5 location:\n[0 4]\nYou already fired on this spot. Choose different coordinates.\nEnter ship 5 location:\n[3 4]\n  0 1 2 3 4 \n0 - - @ - @ \n1 - @ - - - \n2 - - - - @ \n3 - - - - @ \n4 - - - - - \n{ 100 empty lines }\nPlayer 1, enter hit row/column:\n[2 2]\nPLAYER 1 MISSED!\n  0 1 2 3 4 \n0 - - - - - \n1 - - - - - \n2 - - O - - \n3 - - - - - \n4 - - - - - \n\nPlayer 2, enter hit row/column:\n[1 1]\nPLAYER 2 MISSED!\n  0 1 2 3 4 \n0 - - - - - \n1 - O - - - \n2 - - - - - \n3 - - - - - \n4 - - - - - \n\nPlayer 1, enter hit row/column:\n[0 4]\nPLAYER 1 HIT PLAYER 2's SHIP!\n  0 1 2 3 4 \n0 - - - - X \n1 - - - - - \n2 - - O - - \n3 - - - - - \n4 - - - - - \n\nPlayer 2, enter hit row/column:\n[4 3]\nPLAYER 2 MISSED!\n  0 1 2 3 4 \n0 - - - - - \n1 - O - - - \n2 - - - - - \n3 - - - - - \n4 - - - O - \n\nPlayer 1, enter hit row/column:\n[2 2]\nYou already fired on this spot. Choose different coordinates.\nPlayer 1, enter hit row/column:\n[0 2]\nPLAYER 1 HIT PLAYER 2's SHIP!\n  0 1 2 3 4 \n0 - - X - X \n1 - - - - - \n2 - - O - - \n3 - - - - - \n4 - - - - - \n\nPlayer 2, enter hit row/column:\n[-1 3]\nInvalid coordinates. Choose different coordinates.\nPlayer 2, enter hit row/column:\n[0 0]\nPLAYER 2 HIT PLAYER 1's SHIP!\n  0 1 2 3 4 \n0 X - - - - \n1 - O - - - \n2 - - - - - \n3 - - - - - \n4 - - - O - \n\nPlayer 1, enter hit row/column:\n[3 4]\nPLAYER 1 HIT PLAYER 2's SHIP!\n  0 1 2 3 4 \n0 - - X - X \n1 - - - - - \n2 - - O - - \n3 - - - - X \n4 - - - - - \n\nPlayer 2, enter hit row/column:\n[0 3]\nPLAYER 2 HIT PLAYER 1's SHIP!\n  0 1 2 3 4 \n0 X - - X - \n1 - O - - - \n2 - - - - - \n3 - - - - - \n4 - - - O - \n\nPlayer 1, enter hit row/column:\n[5 5]\nInvalid coordinates. Choose different coordinates.\nPlayer 1, enter hit row/column:\n[1 1]\nPLAYER 1 HIT PLAYER 2's SHIP!\n  0 1 2 3 4 \n0 - - X - X \n1 - X - - - \n2 - - O - - \n3 - - - - X \n4 - - - - - \n\nPlayer 2, enter hit row/column:\n[1 1]\nYou already fired on this spot. Choose different coordinates.\nPlayer 2, enter hit row/column:\n[1 1]\nYou already fired on this spot. Choose different coordinates.\nPlayer 2, enter hit row/column:\n[1 3]\nPLAYER 2 HIT PLAYER 1's SHIP!\n  0 1 2 3 4 \n0 X - - X - \n1 - O - X - \n2 - - - - - \n3 - - - - - \n4 - - - O - \n\nPlayer 1, enter hit row/column:\n[2 4]\nPLAYER 1 HIT PLAYER 2's SHIP!\n  0 1 2 3 4 \n0 - - X - X \n1 - X - - - \n2 - - O - X \n3 - - - - X \n4 - - - - - \nPLAYER 1 WINS! YOU SUNK ALL OF YOUR OPPONENT'S SHIPS!\n\nFinal boards:\n\n  0 1 2 3 4 \n0 X - - X - \n1 - O - X - \n2 - - @ - - \n3 - - - - - \n4 - - - O @ \n\n  0 1 2 3 4 \n0 - - X - X \n1 - X - - - \n2 - - O - X \n3 - - - - X \n4 - - - - - \n&quot;
+                                                                                                                                                                                                                                                                                                 ^
+
+Visualized Expected Input/Output
+=====
+Welcome to Battleship!
+
+PLAYER 1, ENTER YOUR SHIPS' COORDINATES.
+Enter ship 1 location:
+[0 0]
+Enter ship 2 location:
+[1 3]
+Enter ship 3 location:
+[-1 2]
+Invalid coordinates. Choose different coordinates.
+Enter ship 3 location:
+[4 4]
+Enter ship 4 location:
+[0 0]
+You already have a ship there. Choose different coordinates.
+Enter ship 4 location:
+[2 2]
+Enter ship 5 location:
+[0 3]
+  0 1 2 3 4 
+0 @ - - @ - 
+1 - - - @ - 
+2 - - @ - - 
+3 - - - - - 
+4 - - - - @ 
+{ 100 empty lines }
+PLAYER 2, ENTER YOUR SHIPS' COORDINATES.
+Enter ship 1 location:
+[1 1]
+Enter ship 2 location:
+[50 1]
+Invalid coordinates. Choose different coordinates.
+Enter ship 2 location:
+[0 4]
+Enter ship 3 location:
+[2 4]
+Enter ship 4 location:
+[0 2]
+Enter ship 5 location:
+[0 4]
+You already have a ship there. Choose different coordinates.
+Enter ship 5 location:
+[3 4]
+  0 1 2 3 4 
+0 - - @ - @ 
+1 - @ - - - 
+2 - - - - @ 
+3 - - - - @ 
+4 - - - - - 
+{ 100 empty lines }
+Player 1, enter hit row/column:
+[2 2]
+PLAYER 1 MISSED!
+  0 1 2 3 4 
+0 - - - - - 
+1 - - - - - 
+2 - - O - - 
+3 - - - - - 
+4 - - - - - 
+
+Player 2, enter hit row/column:
+[1 1]
+PLAYER 2 MISSED!
+  0 1 2 3 4 
+0 - - - - - 
+1 - O - - - 
+2 - - - - - 
+3 - - - - - 
+4 - - - - - 
+
+Player 1, enter hit row/column:
+[0 4]
+PLAYER 1 HIT PLAYER 2's SHIP!
+  0 1 2 3 4 
+0 - - - - X 
+1 - - - - - 
+2 - - O - - 
+3 - - - - - 
+4 - - - - - 
+
+Player 2, enter hit row/column:
+[4 3]
+PLAYER 2 MISSED!
+  0 1 2 3 4 
+0 - - - - - 
+1 - O - - - 
+2 - - - - - 
+3 - - - - - 
+4 - - - O - 
+
+Player 1, enter hit row/column:
+[2 2]
+You already fired on this spot. Choose different coordinates.
+Player 1, enter hit row/column:
+[0 2]
+PLAYER 1 HIT PLAYER 2's SHIP!
+  0 1 2 3 4 
+0 - - X - X 
+1 - - - - - 
+2 - - O - - 
+3 - - - - - 
+4 - - - - - 
+
+Player 2, enter hit row/column:
+[-1 3]
+Invalid coordinates. Choose different coordinates.
+Player 2, enter hit row/column:
+[0 0]
+PLAYER 2 HIT PLAYER 1's SHIP!
+  0 1 2 3 4 
+0 X - - - - 
+1 - O - - - 
+2 - - - - - 
+3 - - - - - 
+4 - - - O - 
+
+Player 1, enter hit row/column:
+[3 4]
+PLAYER 1 HIT PLAYER 2's SHIP!
+  0 1 2 3 4 
+0 - - X - X 
+1 - - - - - 
+2 - - O - - 
+3 - - - - X 
+4 - - - - - 
+
+Player 2, enter hit row/column:
+[0 3]
+PLAYER 2 HIT PLAYER 1's SHIP!
+  0 1 2 3 4 
+0 X - - X - 
+1 - O - - - 
+2 - - - - - 
+3 - - - - - 
+4 - - - O - 
+
+Player 1, enter hit row/column:
+[5 5]
+Invalid coordinates. Choose different coordinates.
+Player 1, enter hit row/column:
+[1 1]
+PLAYER 1 HIT PLAYER 2's SHIP!
+  0 1 2 3 4 
+0 - - X - X 
+1 - X - - - 
+2 - - O - - 
+3 - - - - X 
+4 - - - - - 
+
+Player 2, enter hit row/column:
+[1 1]
+You already fired on this spot. Choose different coordinates.
+Player 2, enter hit row/column:
+[1 1]
+You already fired on this spot. Choose different coordinates.
+Player 2, enter hit row/column:
+[1 3]
+PLAYER 2 HIT PLAYER 1's SHIP!
+  0 1 2 3 4 
+0 X - - X - 
+1 - O - X - 
+2 - - - - - 
+3 - - - - - 
+4 - - - O - 
+
+Player 1, enter hit row/column:
+[2 4]
+PLAYER 1 HIT PLAYER 2's SHIP!
+  0 1 2 3 4 
+0 - - X - X 
+1 - X - - - 
+2 - - O - X 
+3 - - - - X 
+4 - - - - - 
+PLAYER 1 WINS! YOU SUNK ALL OF YOUR OPPONENT'S SHIPS!
+
+Final boards:
+
+  0 1 2 3 4 
+0 X - - X - 
+1 - O - X - 
+2 - - @ - - 
+3 - - - - - 
+4 - - - O @ 
+
+  0 1 2 3 4 
+0 - - X - X 
+1 - X - - - 
+2 - - O - X 
+3 - - - - X 
+4 - - - - - 
+=====
+
+Visualized Actual Input/Output
+=====
+Welcome to Battleship!
+
+PLAYER 1, ENTER YOUR SHIPS' COORDINATES.
+Enter ship 1 location:
+[0 0]
+Enter ship 2 location:
+[1 3]
+Enter ship 3 location:
+[-1 2]
+Invalid coordinates. Choose different coordinates.
+Enter ship 3 location:
+[4 4]
+Enter ship 4 location:
+[0 0]
+You already fired on this spot. Choose different coordinates.
+Enter ship 4 location:
+[2 2]
+Enter ship 5 location:
+[0 3]
+  0 1 2 3 4 
+0 @ - - @ - 
+1 - - - @ - 
+2 - - @ - - 
+3 - - - - - 
+4 - - - - @ 
+{ 100 empty lines }
+PLAYER 2, ENTER YOUR SHIPS' COORDINATES.
+Enter ship 1 location:
+[1 1]
+Enter ship 2 location:
+[50 1]
+Invalid coordinates. Choose different coordinates.
+Enter ship 2 location:
+[0 4]
+Enter ship 3 location:
+[2 4]
+Enter ship 4 location:
+[0 2]
+Enter ship 5 location:
+[0 4]
+You already fired on this spot. Choose different coordinates.
+Enter ship 5 location:
+[3 4]
+  0 1 2 3 4 
+0 - - @ - @ 
+1 - @ - - - 
+2 - - - - @ 
+3 - - - - @ 
+4 - - - - - 
+{ 100 empty lines }
+Player 1, enter hit row/column:
+[2 2]
+PLAYER 1 MISSED!
+  0 1 2 3 4 
+0 - - - - - 
+1 - - - - - 
+2 - - O - - 
+3 - - - - - 
+4 - - - - - 
+
+Player 2, enter hit row/column:
+[1 1]
+PLAYER 2 MISSED!
+  0 1 2 3 4 
+0 - - - - - 
+1 - O - - - 
+2 - - - - - 
+3 - - - - - 
+4 - - - - - 
+
+Player 1, enter hit row/column:
+[0 4]
+PLAYER 1 HIT PLAYER 2's SHIP!
+  0 1 2 3 4 
+0 - - - - X 
+1 - - - - - 
+2 - - O - - 
+3 - - - - - 
+4 - - - - - 
+
+Player 2, enter hit row/column:
+[4 3]
+PLAYER 2 MISSED!
+  0 1 2 3 4 
+0 - - - - - 
+1 - O - - - 
+2 - - - - - 
+3 - - - - - 
+4 - - - O - 
+
+Player 1, enter hit row/column:
+[2 2]
+You already fired on this spot. Choose different coordinates.
+Player 1, enter hit row/column:
+[0 2]
+PLAYER 1 HIT PLAYER 2's SHIP!
+  0 1 2 3 4 
+0 - - X - X 
+1 - - - - - 
+2 - - O - - 
+3 - - - - - 
+4 - - - - - 
+
+Player 2, enter hit row/column:
+[-1 3]
+Invalid coordinates. Choose different coordinates.
+Player 2, enter hit row/column:
+[0 0]
+PLAYER 2 HIT PLAYER 1's SHIP!
+  0 1 2 3 4 
+0 X - - - - 
+1 - O - - - 
+2 - - - - - 
+3 - - - - - 
+4 - - - O - 
+
+Player 1, enter hit row/column:
+[3 4]
+PLAYER 1 HIT PLAYER 2's SHIP!
+  0 1 2 3 4 
+0 - - X - X 
+1 - - - - - 
+2 - - O - - 
+3 - - - - X 
+4 - - - - - 
+
+Player 2, enter hit row/column:
+[0 3]
+PLAYER 2 HIT PLAYER 1's SHIP!
+  0 1 2 3 4 
+0 X - - X - 
+1 - O - - - 
+2 - - - - - 
+3 - - - - - 
+4 - - - O - 
+
+Player 1, enter hit row/column:
+[5 5]
+Invalid coordinates. Choose different coordinates.
+Player 1, enter hit row/column:
+[1 1]
+PLAYER 1 HIT PLAYER 2's SHIP!
+  0 1 2 3 4 
+0 - - X - X 
+1 - X - - - 
+2 - - O - - 
+3 - - - - X 
+4 - - - - - 
+
+Player 2, enter hit row/column:
+[1 1]
+You already fired on this spot. Choose different coordinates.
+Player 2, enter hit row/column:
+[1 1]
+You already fired on this spot. Choose different coordinates.
+Player 2, enter hit row/column:
+[1 3]
+PLAYER 2 HIT PLAYER 1's SHIP!
+  0 1 2 3 4 
+0 X - - X - 
+1 - O - X - 
+2 - - - - - 
+3 - - - - - 
+4 - - - O - 
+
+Player 1, enter hit row/column:
+[2 4]
+PLAYER 1 HIT PLAYER 2's SHIP!
+  0 1 2 3 4 
+0 - - X - X 
+1 - X - - - 
+2 - - O - X 
+3 - - - - X 
+4 - - - - - 
+PLAYER 1 WINS! YOU SUNK ALL OF YOUR OPPONENT'S SHIPS!
+
+Final boards:
+
+  0 1 2 3 4 
+0 X - - X - 
+1 - O - X - 
+2 - - @ - - 
+3 - - - - - 
+4 - - - O @ 
+
+  0 1 2 3 4 
+0 - - X - X 
+1 - X - - - 
+2 - - O - X 
+3 - - - - X 
+4 - - - - - 
+=====
+
+</pre></div></div></body></html>

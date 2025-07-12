@@ -22,39 +22,52 @@ public class Selection {
             
         }
 
-        System.out.println("Unsorted numbers are as follows:");
+        // System.out.println("Unsorted numbers are as follows:");
 
-        for (int number : numbers) {
+        // for (int number : numbers) {
             
-            System.out.print(number + " ");
-        }
-        System.out.println();
+        //     System.out.print(number + " ");
+        // }
+        // System.out.println();
+
+        long start = System.nanoTime();
 
         int temp;
 
-        int start = 0;
+        int counter = 0;
 
-        while (start < arrayLength) {
+        while (counter < arrayLength) {
 
-            for (int i = start + 1; i < arrayLength; i++) {
+            for (int i = counter + 1; i < arrayLength; i++) {
                 
-                if (numbers[i] < numbers[start]) {
+                if (numbers[i] < numbers[counter]) {
                     
-                    temp = numbers[start];
-                    numbers[start] = numbers[i];
-                    numbers[i] = temp;
+                    // temp = numbers[counter];
+                    // numbers[counter] = numbers[i];
+                    // numbers[i] = temp;
+                    swap(numbers, i, counter);
                 }
 
             }
-            start++;
+            counter++;
         }
 
-        System.out.println("Sorted numbers are as follows:");
+        long end = System.nanoTime();
 
-        for (int number : numbers) {
+        System.out.println("Elapsed time: " + (end - start));
+
+        // System.out.println("Sorted numbers are as follows:");
+
+        // for (int number : numbers) {
             
-            System.out.print(number + " ");
-        }
-        System.out.println();
+        //     System.out.print(number + " ");
+        // }
+        // System.out.println();
+    }
+
+    public static void swap(int[] array, int index1, int index2) {
+        int temp = array[index1];
+        array[index1] = array[index2];
+        array[index2] = temp;
     }
 }
